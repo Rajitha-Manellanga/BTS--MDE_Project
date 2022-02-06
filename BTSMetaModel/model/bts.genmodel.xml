@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/metamodeltryagain/src" modelPluginID="metamodeltryagain"
+    modelName="Mytryagain" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>Mytryagain.ecore</foreignModel>
+  <genPackages prefix="Mytryagain" disposableProviderFactory="true" ecorePackage="Mytryagain.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Mytryagain.ecore#//point">
+      <genEnumLiterals ecoreEnumLiteral="Mytryagain.ecore#//point/departure_point"/>
+      <genEnumLiterals ecoreEnumLiteral="Mytryagain.ecore#//point/arrival_point"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Mytryagain.ecore#//Payment_method">
+      <genEnumLiterals ecoreEnumLiteral="Mytryagain.ecore#//Payment_method/debit_card"/>
+      <genEnumLiterals ecoreEnumLiteral="Mytryagain.ecore#//Payment_method/credit_card"/>
+      <genEnumLiterals ecoreEnumLiteral="Mytryagain.ecore#//Payment_method/bank_transfer"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Mytryagain.ecore#//booking_status">
+      <genEnumLiterals ecoreEnumLiteral="Mytryagain.ecore#//booking_status/booked"/>
+      <genEnumLiterals ecoreEnumLiteral="Mytryagain.ecore#//booking_status/reserved"/>
+      <genEnumLiterals ecoreEnumLiteral="Mytryagain.ecore#//booking_status/cancelled"/>
+    </genEnums>
+    <genClasses ecoreClass="Mytryagain.ecore#//City">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Mytryagain.ecore#//City/name"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute Mytryagain.ecore#//City/bus_stop"/>
+    </genClasses>
+    <genClasses ecoreClass="Mytryagain.ecore#//Seat">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Mytryagain.ecore#//Seat/seat_id"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Mytryagain.ecore#//Seat/booking"/>
+    </genClasses>
+    <genClasses ecoreClass="Mytryagain.ecore#//Ticket">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Mytryagain.ecore#//Ticket/ticket_id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Mytryagain.ecore#//Ticket/price"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Mytryagain.ecore#//Ticket/arrival_city"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Mytryagain.ecore#//Ticket/departure_city"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Mytryagain.ecore#//Ticket/journey_date"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Mytryagain.ecore#//Ticket/booking_id"/>
+    </genClasses>
+    <genClasses ecoreClass="Mytryagain.ecore#//Booking">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Mytryagain.ecore#//Booking/booking_id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Mytryagain.ecore#//Booking/passenger_id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Mytryagain.ecore#//Booking/payment_date"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Mytryagain.ecore#//Booking/status"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Mytryagain.ecore#//Booking/journey_date"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Mytryagain.ecore#//Booking/ticket"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Mytryagain.ecore#//Booking/payment"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Mytryagain.ecore#//Booking/baggage"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Mytryagain.ecore#//Booking/totalAvailableBookings"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Mytryagain.ecore#//Booking/seat"/>
+    </genClasses>
+    <genClasses ecoreClass="Mytryagain.ecore#//Payment">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Mytryagain.ecore#//Payment/payment_id"/>
+    </genClasses>
+    <genClasses ecoreClass="Mytryagain.ecore#//Baggage">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Mytryagain.ecore#//Baggage/baggage_tag"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Mytryagain.ecore#//Baggage/baggage_id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Mytryagain.ecore#//Baggage/ticket_id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Mytryagain.ecore#//Baggage/weight"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Mytryagain.ecore#//Baggage/seat_id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Mytryagain.ecore#//Baggage/allowedbags"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Mytryagain.ecore#//Baggage/maximunweight"/>
+    </genClasses>
+    <genClasses ecoreClass="Mytryagain.ecore#//Passenger">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Mytryagain.ecore#//Passenger/passenger_id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Mytryagain.ecore#//Passenger/fisrt_name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Mytryagain.ecore#//Passenger/last_name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Mytryagain.ecore#//Passenger/email"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Mytryagain.ecore#//Passenger/phone"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Mytryagain.ecore#//Passenger/booking"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Mytryagain.ecore#//Passenger/baggage"/>
+    </genClasses>
+    <genClasses ecoreClass="Mytryagain.ecore#//KIOSK">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Mytryagain.ecore#//KIOSK/booking_id"/>
+    </genClasses>
+    <genClasses ecoreClass="Mytryagain.ecore#//Online_payment">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Mytryagain.ecore#//Online_payment/type"/>
+    </genClasses>
+    <genClasses ecoreClass="Mytryagain.ecore#//Bus">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Mytryagain.ecore#//Bus/bus_id"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute Mytryagain.ecore#//Bus/bus_stop"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Mytryagain.ecore#//Bus/capacity"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Mytryagain.ecore#//Bus/city"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Mytryagain.ecore#//Bus/passenger"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Mytryagain.ecore#//Bus/seat"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Mytryagain.ecore#//Bus/bookedseats"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
