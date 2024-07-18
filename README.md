@@ -1,4 +1,4 @@
-# MDE-HW-Assignment2
+# BTS - MDE Project
  Bts is Bus Management System
  we defined metamodel in EMF
  There are total 10 metaclasses
